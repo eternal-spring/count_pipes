@@ -5,7 +5,7 @@ import cv2
 def count_objects(model_path, image_path):
     model = YOLO(model_path)
 
-    results = model(image_path)
+    results = model(image_path, conf=0.5)
 
     num_objects = len(results[0].boxes)
 
